@@ -28,7 +28,7 @@ namespace MVCViews.Controllers
             return View();
         }
 
-        [HttpPost] // HttpPost metoduyla sayfadan gelecek olan verileri alabiliyoruz
+        [HttpPost] // HttpPost metoduyla sayfadan gelecek olan verileri alabiliyoruz.Attribute
         public IActionResult Personel(Personel personel)
         {
             if (ModelState.IsValid) // ModelState : Modelim geçerli ise?
@@ -38,6 +38,30 @@ namespace MVCViews.Controllers
                 ViewBag.Mesaj = personelBilgi;
             }
             return View(personel);
+        }
+        [HttpGet] // HttpGet metoduyla sayfayı getiriyoruz
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Login(Login login)
+        {
+            if (ModelState.IsValid) // ModelState : Modelim geçerli ise?
+            {
+                //string Giris = " ";
+                //Giris = "Login(UserID,Password): " + Login.UserID + " " + Login.Password;
+                if (login.UserID == "nes" && login.Password == "1234")
+                {
+                    ViewBag.Mesaj = "Başarılı Giriş";
+                    return View("Congrats");
+                }
+                else
+                {
+                    ViewBag.Mesaj = "Hatalı Giriş";
+                }
+            }
+            return View(login);
         }
 
 

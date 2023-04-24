@@ -1,0 +1,30 @@
+﻿@model Login
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post)) // @ : html içerisinde C# kullanabilmek için...
+{
+    <label>Kullanıcı Adı : </label>
+
+    @Html.TextBoxFor(model => Model.UserID)
+    <br />
+    <br />
+    // Helper -> TextBoxFor : Model kullanacaksak bunu kullanıyoruz
+    <label>Şifre : </label>
+
+    @Html.PasswordFor(model => Model.Password)
+    <br />
+    <br />
+   
+
+    <b>@Html.Label("",(string)ViewBag.Mesaj,new {@class = "width: 400px;color:red"})</b>
+    // ViewBag: View ile kontroller arasında veri taşıyan çanta. // CSS özelliği veriliyor
+    <br />
+    <br />
+    <button type="submit">Gönder...</button>
+}
+
+
