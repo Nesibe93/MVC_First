@@ -22,6 +22,11 @@ namespace MVCViews.Controllers
         {
             return View();
         }
+
+
+
+
+
         [HttpGet] // HttpGet metoduyla sayfayı getiriyoruz
         public IActionResult Personel()
         {
@@ -44,7 +49,7 @@ namespace MVCViews.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [HttpPost] // Login sayfasından gelen verileri alıyor
         public IActionResult Login(Login login)
         {
             if (ModelState.IsValid) // ModelState : Modelim geçerli ise?
@@ -69,6 +74,13 @@ namespace MVCViews.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+
+        public IActionResult Razor()
+        {
+            return View();
         }
     }
 }

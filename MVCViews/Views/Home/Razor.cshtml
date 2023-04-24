@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Razor";
+}
+
+<h1>Razor</h1>
+
+@* Yorum satırı *@
+@{
+    string bosluk = "";
+    string[] names = new string[] { "Selim", "Kosanoğlu" };
+
+    foreach (var item in names)
+    {
+        //@item // Ekrana yazacak diziyi boşluksuz olarak..
+        @(item + bosluk)
+
+        @: // kısa kullanım..boşluk yerine
+    }
+
+
+}
