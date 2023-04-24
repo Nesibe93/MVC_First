@@ -1,0 +1,19 @@
+﻿@model MVCViews.Models.Personel // Data modeli kullanacağımı belirttim
+@{
+    ViewData["Title"] = "Personel";
+}
+
+<h1>Personel</h1>
+<br />
+<br />
+
+@using (Html.BeginForm("Personel","Home",FormMethod.Post)) // @ : html içerisinde C# kullanabilmek için...
+{
+    <label>Adı : </label>@Html.TextBoxFor(Model => Model.Ad)<br /><br /> // Helper -> TextBoxFor : Model kullanacaksak bunu kullanıyoruz
+    <label>Soyadı : </label>@Html.TextBoxFor(Model => Model.Soyad)<br /><br />
+    <label>Yas : </label>@Html.TextBoxFor(Model => Model.Yas)<br /><br />
+    <b>@Html.Label("",(string)ViewBag.Mesaj,new {@class = "width: 400px;color:red"})</b> // ViewBag: View ile kontroller arasında veri taşıyan çanta. // CSS özelliği veriliyor
+    <br />
+    <br />
+    <button type="submit">Gönder...</button>
+}
