@@ -77,7 +77,6 @@ namespace MVCViews.Controllers
         }
 
 
-
         public IActionResult Razor()
         {
             return View();
